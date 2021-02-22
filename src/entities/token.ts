@@ -7,8 +7,8 @@ import { Currency } from './currency'
  * Represents an ERC20 token with a unique address and some metadata.
  */
 export class Token extends Currency {
-  public readonly chainId: ChainId
-  public readonly address: string
+  public chainId: ChainId
+  public address: string
 
   public constructor(chainId: ChainId, address: string, decimals: number, symbol?: string, name?: string) {
     super(decimals, symbol, name)
@@ -66,7 +66,7 @@ export const WETH = {
   ),
   [ChainId.BSCTESTNET]: new Token(
     ChainId.BSCTESTNET,
-    '0xaE8E19eFB41e7b96815649A6a60785e1fbA84C1e',
+    '0xae13d989dac2f0debff460ac112a837c89baa7cd',
     18,
     'WBNB',
     'Wrapped BNB'
