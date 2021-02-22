@@ -15,7 +15,7 @@ import {
   FIVE,
   _998,
   _1000,
-  ChainId
+  ChainId,
 } from '../constants'
 import { sqrt, parseBigintIsh } from '../utils'
 import { InsufficientReservesError, InsufficientInputAmountError } from '../errors'
@@ -24,7 +24,7 @@ import { Token } from './token'
 let PAIR_ADDRESS_CACHE: { [token0Address: string]: { [token1Address: string]: string } } = {}
 
 export class Pair {
-  public readonly liquidityToken: Token
+  public liquidityToken: Token
   private readonly tokenAmounts: [TokenAmount, TokenAmount]
 
   public static getAddress(tokenA: Token, tokenB: Token): string {
@@ -39,8 +39,8 @@ export class Pair {
             FACTORY_ADDRESS,
             keccak256(['bytes'], [pack(['address', 'address'], [tokens[0].address, tokens[1].address])]),
             INIT_CODE_HASH
-          )
-        }
+          ),
+        },
       }
     }
 
